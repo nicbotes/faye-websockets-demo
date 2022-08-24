@@ -1,0 +1,5 @@
+root: "~"
+layout:
+  -
+    - ruby tell_everyone_about_yourself.rb
+    - thin -p 8080 start

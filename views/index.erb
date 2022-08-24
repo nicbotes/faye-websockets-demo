@@ -1,0 +1,12 @@
+<h1>hi there</h1>
+
+<script>
+ $(document).ready(function(){
+    var faye = new Faye.Client("http://localhost:8080/faye")
+
+    faye.subscribe('/about', function(data) { return eval(data) });
+    $('.subscribe').each( function(){
+       faye.subscribe('/' + $(this).data('channel'), function(data) { return eval(data)});
+      })
+ });
+</script>
